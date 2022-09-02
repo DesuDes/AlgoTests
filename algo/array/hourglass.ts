@@ -1,4 +1,5 @@
 //https://www.hackerrank.com/challenges/2d-array/problem
+
 const ARR = [
   [-9, 9, -9, 1, 1, 1],
   [0, 9, 0, 4, 3, 2],
@@ -27,27 +28,16 @@ function getHourGlassSum(ARR: number[][]) {
         break;
       }
       //check first ----
-      //   console.log(
-      //     ARR[tempRow][col],
-      //     ARR[tempRow][col + 1],
-      //     ARR[tempRow][col + 2]
-      //   );
       sum += ARR[tempRow][col] + ARR[tempRow][col + 1] + ARR[tempRow][col + 2];
+
       //check middle x-x
-      //   console.log(ARR[tempRow + 1][col + 1]);
       sum += ARR[tempRow + 1][col + 1];
+
       //check last
-      //   console.log(
-      //     ARR[tempRow + 2][col],
-      //     ARR[tempRow + 2][col + 1],
-      //     ARR[tempRow + 2][col + 2]
-      //   );
       sum +=
         ARR[tempRow + 2][col] +
         ARR[tempRow + 2][col + 1] +
         ARR[tempRow + 2][col + 2];
-
-      //   console.log("Target", sum, "\n");
 
       if (sum > largestSum) {
         console.log("new sum", row, col, sum, "\n");
@@ -58,8 +48,8 @@ function getHourGlassSum(ARR: number[][]) {
   return largestSum;
 }
 
-// const LARGEST_SUM = getHourGlassSum(ARR);
-// console.log(LARGEST_SUM);
+const LARGEST_SUM = getHourGlassSum(ARR);
+console.log(LARGEST_SUM);
 
 const LARGEST_SUM2 = getHourGlassSum(ARR2);
 console.log(LARGEST_SUM2);
